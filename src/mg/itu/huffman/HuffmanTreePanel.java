@@ -13,10 +13,10 @@ import java.util.Map;
 import javax.swing.JPanel;
 
 public class HuffmanTreePanel extends JPanel {
+    
     private Node root;
     private static final int NODE_RADIUS = 20;
     private static final int VERTICAL_GAP = 80;
-    private static final int HORIZONTAL_GAP = 40;
     private Map<Node, Point> nodePositions;
 
     public HuffmanTreePanel(Node root) {
