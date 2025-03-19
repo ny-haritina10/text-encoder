@@ -12,7 +12,9 @@ import mg.itu.bits.BitInputStream;
 
 public class FileDecompressor {
 
-    public void decompressFile(String inputFilePath, String outputFilePath) throws IOException {
+    public void decompressFile(String inputFilePath, String outputFilePath) 
+        throws IOException 
+    {
         try (FileInputStream fis = new FileInputStream(inputFilePath);
              BufferedInputStream bis = new BufferedInputStream(fis);
              DataInputStream dis = new DataInputStream(bis);
@@ -29,9 +31,6 @@ public class FileDecompressor {
 
             while (bitsProcessed < compressedLength - paddingBits) {
                 int bit = bitInput.readBit();
-                if (bit == -1) {
-                    throw new IOException("Unexpected end of file");
-                }
                 
                 currentCode.append(bit);
                 bitsProcessed++;
