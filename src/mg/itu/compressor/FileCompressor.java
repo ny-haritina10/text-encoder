@@ -18,7 +18,9 @@ public class FileCompressor {
         this.huffmanCoder = new HuffmanCoder();
     }
 
-    public void compressFile(String inputFilePath, String outputFilePath) throws IOException {
+    public void compressFile(String inputFilePath, String outputFilePath) 
+        throws IOException 
+    {
         String text = readTextFile(inputFilePath);
 
         Map<Character, String> huffmanCodes = huffmanCoder.encode(text);
@@ -44,7 +46,9 @@ public class FileCompressor {
         }
     }
 
-    private String readTextFile(String filePath) throws IOException {
+    private String readTextFile(String filePath) 
+        throws IOException 
+    {
         StringBuilder text = new StringBuilder();
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             String line;
