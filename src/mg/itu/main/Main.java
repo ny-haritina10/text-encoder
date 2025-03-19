@@ -2,8 +2,6 @@ package mg.itu.main;
 
 import java.util.Map;
 
-import javax.swing.SwingUtilities;
-
 import mg.itu.huffman.HuffmanCoder;
 
 public class Main {
@@ -22,7 +20,11 @@ public class Main {
         String compressed = coder.compress(text);
         System.out.println("\nOriginal text: " + text);
         System.out.println("Compressed: " + compressed);
+
+        String decompressed = coder.decompress(compressed);
+        System.out.println("Decompressed: " + decompressed);
+        System.out.println("Decompression successful: " + text.equals(decompressed));
         
-        SwingUtilities.invokeLater(coder::visualizeTree);
+        // SwingUtilities.invokeLater(coder::visualizeTree);
     }
 }

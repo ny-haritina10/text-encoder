@@ -54,4 +54,30 @@ public class HuffmanTree {
     public Node getRoot() {
         return root;
     }
+
+    public String decode(String encodedString) {
+        if (root == null) {
+            throw new IllegalStateException("Tree not built yet");
+        }
+
+        StringBuilder decoded = new StringBuilder();
+        Node current = root;
+
+        for (char bit : encodedString.toCharArray()) {
+            if (bit == '0') {
+                current = current.getLeftChild();
+            } else if (bit == '1') {
+                current = current.getRightChild();
+            } else {
+                throw new IllegalArgumentException("Invalid bit in encoded string: " + bit);
+            }
+
+            if (current.isLeaf()) {
+                decoded.append(current.getCharacter());
+                current = root;
+            }
+        }
+
+        return decoded.toString();
+    }
 }

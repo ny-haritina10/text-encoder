@@ -41,8 +41,13 @@ public class HuffmanCoder {
         return compressed.toString();
     }
 
+    public String decompress(String compressedText) {
+        return huffmanTree.decode(compressedText);
+    }
+
     public void visualizeTree() {
         JFrame frame = new JFrame("Huffman Tree Visualization");
+        
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.add(new HuffmanTreePanel(huffmanTree.getRoot()));
         frame.pack();

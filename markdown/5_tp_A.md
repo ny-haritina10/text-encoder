@@ -47,11 +47,6 @@ Detailed step-by-step guide to implement Huffman coding in Java using an object-
 - Replace each character with its corresponding Huffman code
 - Return the encoded binary string
 
-### Step 2: Implement a method to save encoded data to a file (optional)
-- Convert the binary string to a more efficient format (bit-packed)
-- Save the compressed data to a file
-- Include the Huffman code table in the file for later decompression
-
 ## Question 1(c): Decode text using Huffman codes
 
 ### Step 1: Create a decoder method
